@@ -1,13 +1,14 @@
 {
   "name": "@edadma/react-bulma",
-  "version": "0.1.0-pre.14",
+  "version": "0.1.0-pre.26",
   "description": "react components based on Bulma CSS",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.js",
+    "./dist/*": "./dist/*.js"
   },
   "dependencies": {
     "bulma": "^0.9.3",
@@ -21,8 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepublish": "tsc && npm run copy",
-    "copy": "copyfiles -u 1 \"./src/**/*.{css,html}\" \"./dist/\""
+    "prepublish": "tsc"
   },
   "eslintConfig": {
     "extends": [

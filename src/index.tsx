@@ -41,3 +41,6 @@
 export {Button, Buttons} from './Button'
 export {Box} from './Box'
 export {Text} from './Text'
+export {Container} from './Container'
+export {Card} from './Card'
+export {Column, Columns} from './Column'

@@ -1,5 +1,5 @@
 import React from 'react'
-import './bulma.min.css'
+import 'bulma/css/bulma.min.css'
 
 interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -12,7 +12,7 @@ interface ButtonProps
   rounded?: boolean
   loading?: boolean
   color?: string
-  size?: string
+  size?: 'small'|'medium'|'large'
   fullwidth?: boolean
 }
 
