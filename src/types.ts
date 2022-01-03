@@ -1,0 +1,12 @@
+export type Colors =
+  | 'white'
+  | 'dark'
+  | 'black'
+  | 'text'
+  | 'ghost'
+  | 'primary'
+  | 'link'
+  | 'info'
+  | 'success'
+  | 'warning'
+  | 'danger'
