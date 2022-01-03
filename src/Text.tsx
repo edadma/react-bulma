@@ -1,5 +1,4 @@
 import React from 'react'
-import 'bulma/css/bulma.min.css'
 
 interface TextProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {

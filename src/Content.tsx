@@ -1,5 +1,4 @@
 import React from 'react'
-import 'bulma/css/bulma.min.css'
 
 interface ContentProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}

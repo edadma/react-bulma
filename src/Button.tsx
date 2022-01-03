@@ -1,5 +1,4 @@
 import React from 'react'
-import 'bulma/css/bulma.min.css'
 
 interface ButtonProps
   extends React.DetailedHTMLProps<
