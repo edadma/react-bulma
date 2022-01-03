@@ -1,5 +1,5 @@
 import React from 'react'
-import { Colors } from './types'
+import { Color, Size } from './types'
 
 interface ButtonProps
   extends React.DetailedHTMLProps<
@@ -11,8 +11,8 @@ interface ButtonProps
   outlined?: boolean
   rounded?: boolean
   loading?: boolean
-  color?: Colors
-  size?: 'small' | 'medium' | 'large'
+  color?: Color
+  size?: Size
   fullwidth?: boolean
 }
 

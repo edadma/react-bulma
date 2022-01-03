@@ -1,4 +1,4 @@
-export type Colors =
+export type Color =
   | 'white'
   | 'dark'
   | 'black'
@@ -10,3 +10,5 @@ export type Colors =
   | 'success'
   | 'warning'
   | 'danger'
+
+export type Size = 'small' | 'medium' | 'large'
