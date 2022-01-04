@@ -1,18 +1,51 @@
 import React from 'react'
 import './bulma.min.css'
-import { Progress, Columns, Column } from './index'
+import { Table, Box, Columns, Column } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 
+const data = [
+  {
+    key: '1',
+    name: 'Mike',
+    age: 32,
+    address: '10 Downing Street',
+  },
+  {
+    key: '2',
+    name: 'John',
+    age: 42,
+    address: '20 Downing Street',
+  },
+]
+
+const columns = [
+  {
+    title: 'Name',
+    index: 'name',
+    key: 'name',
+  },
+  {
+    title: 'Age',
+    index: 'age',
+    key: 'age',
+  },
+  {
+    title: 'Address',
+    index: 'address',
+    key: 'address',
+  },
+]
+
 const App: React.FC = () => {
   return (
-    <>
-      <Columns>
-        <Column size="2">
-          <Progress color="primary" size="large" value={0.5} />
-        </Column>
-      </Columns>
-    </>
+    <Columns>
+      <Column size="3">
+        <Box>
+          <Table columns={columns} data={data} />
+        </Box>
+      </Column>
+    </Columns>
   )
 }
 
@@ -40,3 +73,4 @@ export { IconFa } from './Icon'
 export { Image } from './Image'
 export { Notification } from './Notification'
 export { Progress } from './Progress'
+export { Table } from './Table'
