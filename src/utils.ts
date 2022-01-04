@@ -1,3 +1,4 @@
-export function optionProps(p: any, ...ps: string[]) {
-  return ps.map((f) => ({ [`is-${f}`]: p[f] }))
-}
+export const isProps = (p: any, ...ps: string[]) => optionProps(p, 'is', ps)
+
+export const optionProps = (p: any, prefix: string, ps: string[]) =>
+  ps.map((f) => ({ [`${prefix}-${f}`]: p[f] }))

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helpers } from './types'
 import classNames from 'classnames'
-import { optionProps } from './utils'
+import { isProps } from './utils'
 
 export type ColumnSize =
   | 'three-quarters'
@@ -41,7 +41,7 @@ export const Columns: React.FC<ColumnsProps> = ({ children, helpers, ...other })
     <div
       className={classNames(
         'columns',
-        optionProps(other, 'gapless', 'multiline', 'vcentered', 'centered'),
+        isProps(other, 'gapless', 'multiline', 'vcentered', 'centered'),
         helpers || ''
       )}
       {...other}
