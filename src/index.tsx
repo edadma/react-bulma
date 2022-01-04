@@ -1,6 +1,6 @@
 import React from 'react'
 import './bulma.min.css'
-import { Table, Box, Columns, Column } from './index'
+import { Table, Box, Columns, Column, Tag, Tags } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 
@@ -46,6 +46,12 @@ const App: React.FC = () => {
           <Table striped hoverable bordered narrow columns={columns} data={data} />
         </Box>
       </Column>
+      <Column size="3">
+        <Tags addons>
+          <Tag color="dark">one</Tag>
+          <Tag color="info">two</Tag>
+        </Tags>
+      </Column>
     </Columns>
   )
 }
@@ -75,4 +81,5 @@ export { Image } from './Image'
 export { Notification } from './Notification'
 export { Progress } from './Progress'
 export { Table } from './Table'
-export { Tag } from './Tag'
+export { Tag, Tags } from './Tag'
+export { Title, Subtitle } from './Title'

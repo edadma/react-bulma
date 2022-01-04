@@ -3,22 +3,13 @@ import { Size, Color } from './types'
 
 interface TagProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
-  name: string
   size?: Size
   color?: Color
   light?: boolean
   rounded?: boolean
 }
 
-export const Tag: React.FC<TagProps> = ({
-  children,
-  name,
-  size,
-  color,
-  light,
-  rounded,
-  ...other
-}) => (
+export const Tag: React.FC<TagProps> = ({ children, size, color, light, rounded, ...other }) => (
   <span
     className={
       'tag' +
@@ -29,6 +20,18 @@ export const Tag: React.FC<TagProps> = ({
     }
     {...other}
   >
+    {children}
+  </span>
+)
+
+interface TagsProps
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
+  size?: Size
+  addons?: boolean
+}
+
+export const Tags: React.FC<TagsProps> = ({ children, size, addons, ...other }) => (
+  <span className={'tags' + (size ? ` is-${size}` : '') + (addons ? ' has-addons' : '')} {...other}>
     {children}
   </span>
 )
