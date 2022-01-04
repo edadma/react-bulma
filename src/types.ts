@@ -11,4 +11,6 @@ export type Color =
   | 'warning'
   | 'danger'
 
+export type TextColor = 'info' | 'success' | 'warning' | 'danger'
+
 export type Size = 'small' | 'medium' | 'large'

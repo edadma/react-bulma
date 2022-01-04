@@ -1,11 +1,11 @@
 import React from 'react'
 
-interface BoxProps
+interface BlockProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 
-export const Box: React.FC<BoxProps> = ({ children, ...other }) => {
+export const Block: React.FC<BlockProps> = ({ children, ...other }) => {
   return (
-    <div className="box" {...other}>
+    <div className="block" {...other}>
       {children}
     </div>
   )

@@ -11,6 +11,8 @@ interface ButtonProps
   outlined?: boolean
   rounded?: boolean
   loading?: boolean
+  inverted?: boolean
+  del?: boolean
   color?: Color
   size?: Size
   fullwidth?: boolean
@@ -24,6 +26,8 @@ export const Button: React.FC<ButtonProps> = ({
   outlined,
   rounded,
   loading,
+  inverted,
+  del,
   size,
   fullwidth,
   ...other
@@ -38,6 +42,8 @@ export const Button: React.FC<ButtonProps> = ({
         (outlined ? ' is-outlined' : '') +
         (rounded ? ' is-rounded' : '') +
         (loading ? ' is-loading' : '') +
+        (inverted ? ' is-inverted' : '') +
+        (del ? ' is-del' : '') +
         (size ? ` is-${size}` : '') +
         (fullwidth ? ' is-fullwidth' : '')
       }
