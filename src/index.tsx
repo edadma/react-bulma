@@ -1,20 +1,15 @@
 import React from 'react'
 import './bulma.min.css'
-import { Image, Columns, Column } from './index'
+import { Progress, Columns, Column } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
-import { Notification } from './Notification'
-import { Button, Delete } from './Button'
 
 const App: React.FC = () => {
   return (
     <>
       <Columns>
         <Column size="2">
-          <Notification color="warning">
-            <Delete />
-            this is a notification
-          </Notification>
+          <Progress color="primary" size="large" value={0.5} />
         </Column>
       </Columns>
     </>
@@ -44,3 +39,4 @@ export { Block } from './Block'
 export { IconFa } from './Icon'
 export { Image } from './Image'
 export { Notification } from './Notification'
+export { Progress } from './Progress'

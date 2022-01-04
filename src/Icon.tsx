@@ -11,7 +11,7 @@ interface IconProps
 export const IconFa: React.FC<IconProps> = ({ children, name, size, color, ...other }) => {
   const icon = (
     <span
-      className={'icon' + (size ? ` is-size-${size} ` : '') + (color ? `has-text-${color} ` : '')}
+      className={'icon' + (size ? ` is-size-${size}` : '') + (color ? ` has-text-${color}` : '')}
       {...other}
     >
       <i className={`fas fa-${name}`} />
