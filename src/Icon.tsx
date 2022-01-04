@@ -27,12 +27,3 @@ export const IconFa: React.FC<IconProps> = ({ children, name, size, color, ...ot
     icon
   )
 }
-
-// children ? (
-//   <span className="icon-text">
-//     {icon}
-//     <span>{children}</span>
-//   </span>
-// ) : (
-//   icon
-// )
