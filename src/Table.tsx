@@ -1,4 +1,6 @@
 import React, { ReactNode } from 'react'
+import classNames from 'classnames'
+import { isProps } from './utils'
 
 export interface TableColumn {
   title: ReactNode
@@ -10,11 +12,22 @@ export interface TableProps
   extends React.DetailedHTMLProps<React.TableHTMLAttributes<HTMLTableElement>, HTMLTableElement> {
   columns: TableColumn[]
   data: any[]
+  bordered?: boolean
+  striped?: boolean
+  narrow?: boolean
+  hoverable?: boolean
+  fullwidth?: boolean
 }
 
 export const Table: React.FC<TableProps> = ({ columns, data, ...other }) => {
   return (
-    <table className="table" {...other}>
+    <table
+      className={classNames(
+        'table',
+        isProps(other, 'bordered', 'striped', 'narrow', 'hoverable', 'fullwidth')
+      )}
+      {...other}
+    >
       <thead>
         <tr>
           {columns.map(({ title, index, key }, ind) => (

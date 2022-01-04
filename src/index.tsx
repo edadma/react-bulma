@@ -42,7 +42,8 @@ const App: React.FC = () => {
     <Columns>
       <Column size="3">
         <Box>
-          <Table columns={columns} data={data} />
+          <Table striped hoverable bordered columns={columns} data={data} />
+          <Table striped hoverable bordered narrow columns={columns} data={data} />
         </Box>
       </Column>
     </Columns>
