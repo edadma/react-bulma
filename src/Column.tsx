@@ -61,12 +61,12 @@ interface ColumnProps
 export const Column: React.FC<ColumnProps> = ({ children, size, offset, narrow, ...other }) => {
   return (
     <div
-      className={
-        'column' +
-        ((size ? ` is-${size}` : '') +
-          (offset ? ` is-offset-${offset}` : '') +
-          (narrow ? ' is-narrow' : ''))
-      }
+      className={classNames(
+        'column',
+        { [`is-${size}`]: size },
+        { [`is-offset-${offset}`]: offset },
+        { 'is-narrow': narrow }
+      )}
       {...other}
     >
       {children}
