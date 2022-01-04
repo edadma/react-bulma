@@ -1,16 +1,29 @@
 import React from 'react'
 import './bulma.min.css'
-import { Box, Image, Columns, Column } from './index'
+import { Image, Columns, Column } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 
 const App: React.FC = () => {
   return (
-    <Columns>
-      <Column>
-        <Image dim="3by4" src="https://bulma.io/images/placeholders/128x128.png" />
-      </Column>
-    </Columns>
+    <>
+      <Columns gapless helpers="mb-0">
+        <Column size="1">
+          <Image dim="3by4" src="https://bulma.io/images/placeholders/128x128.png" />
+        </Column>
+        <Column size="1">
+          <Image dim="3by4" src="https://bulma.io/images/placeholders/128x128.png" />
+        </Column>
+      </Columns>
+      <Columns>
+        <Column size="1">
+          <Image dim="3by4" src="https://bulma.io/images/placeholders/128x128.png" />
+        </Column>
+        <Column size="1">
+          <Image dim="3by4" src="https://bulma.io/images/placeholders/128x128.png" />
+        </Column>
+      </Columns>
+    </>
   )
 }
 

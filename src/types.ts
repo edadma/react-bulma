@@ -14,3 +14,7 @@ export type Color =
 export type TextColor = 'info' | 'success' | 'warning' | 'danger'
 
 export type Size = 'small' | 'medium' | 'large'
+
+export interface Helpers {
+  helpers?: string
+}
