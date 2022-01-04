@@ -1,6 +1,14 @@
 import React from 'react'
 import { Color, Size } from './types'
 
+interface DeleteButtonProps
+  extends React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
+  size?: Size
+}
+
 interface ButtonProps
   extends React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -12,7 +20,6 @@ interface ButtonProps
   rounded?: boolean
   loading?: boolean
   inverted?: boolean
-  del?: boolean
   color?: Color
   size?: Size
   fullwidth?: boolean
@@ -27,7 +34,6 @@ export const Button: React.FC<ButtonProps> = ({
   rounded,
   loading,
   inverted,
-  del,
   size,
   fullwidth,
   ...other
@@ -43,7 +49,6 @@ export const Button: React.FC<ButtonProps> = ({
         (rounded ? ' is-rounded' : '') +
         (loading ? ' is-loading' : '') +
         (inverted ? ' is-inverted' : '') +
-        (del ? ' is-del' : '') +
         (size ? ` is-${size}` : '') +
         (fullwidth ? ' is-fullwidth' : '')
       }
@@ -52,6 +57,10 @@ export const Button: React.FC<ButtonProps> = ({
       {children}
     </button>
   )
+}
+
+export const Delete: React.FC<DeleteButtonProps> = ({ size, ...other }) => {
+  return <button className={'delete' + (size ? ` is-${size}` : '')} {...other} />
 }
 
 interface ButtonsProps

@@ -3,24 +3,18 @@ import './bulma.min.css'
 import { Image, Columns, Column } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
+import { Notification } from './Notification'
+import { Button, Delete } from './Button'
 
 const App: React.FC = () => {
   return (
     <>
-      <Columns gapless helpers="mb-0">
-        <Column size="1">
-          <Image dim="3by4" src="https://bulma.io/images/placeholders/128x128.png" />
-        </Column>
-        <Column size="1">
-          <Image dim="3by4" src="https://bulma.io/images/placeholders/128x128.png" />
-        </Column>
-      </Columns>
       <Columns>
-        <Column size="1">
-          <Image dim="3by4" src="https://bulma.io/images/placeholders/128x128.png" />
-        </Column>
-        <Column size="1">
-          <Image dim="3by4" src="https://bulma.io/images/placeholders/128x128.png" />
+        <Column size="2">
+          <Notification color="warning">
+            <Delete />
+            this is a notification
+          </Notification>
         </Column>
       </Columns>
     </>
@@ -39,7 +33,7 @@ ReactDOM.render(
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals()
 
-export { Button, Buttons } from './Button'
+export { Button, Buttons, Delete } from './Button'
 export { Box } from './Box'
 export { Text } from './Text'
 export { Container } from './Container'
@@ -49,3 +43,4 @@ export { Content } from './Content'
 export { Block } from './Block'
 export { IconFa } from './Icon'
 export { Image } from './Image'
+export { Notification } from './Notification'
