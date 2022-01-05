@@ -108,12 +108,18 @@ interface SubmitProps {
   text?: string
   size?: Size
   color?: Color
+  rounded?: boolean
 }
 
 export const Submit: React.FC<SubmitProps> = ({ children, text, size, color, ...other }) => {
   return (
     <input
-      className={classNames('button', { [`is-${size}`]: size }, { [`is-${color}`]: color })}
+      className={classNames(
+        'button',
+        isProps(other, 'rounded'),
+        { [`is-${size}`]: size },
+        { [`is-${color}`]: color }
+      )}
       type="submit"
       value={text || 'Submit'}
     />

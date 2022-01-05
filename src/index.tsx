@@ -15,12 +15,19 @@ const App: React.FC = () => {
             <Field>
               <Label>Input</Label>
               <Control>
-                <Input name="input" type="text" placeholder="Text input" />
+                <Input
+                  name="input"
+                  type="text"
+                  placeholder="Text input"
+                  rounded
+                  defaultValue="asdf"
+                  onChange={(e) => console.log(e.target.value)}
+                />
               </Control>
             </Field>
             <Field>
               <Control>
-                <Submit color="success" />
+                <Submit rounded color="success" />
               </Control>
             </Field>
           </Form>
