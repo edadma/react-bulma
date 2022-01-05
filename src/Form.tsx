@@ -89,14 +89,18 @@ interface FormProps {
 }
 
 export const Form: React.FC<FormProps> = ({ children, onSubmit }) => {
+  let ref: HTMLFormElement | null = null
+
   return (
     <form
+      ref={(f) => (ref = f)}
       onSubmit={(e) => {
         e.preventDefault()
 
         const data = new FormData(e.target as HTMLFormElement)
 
         onSubmit(Object.fromEntries(data.entries()))
+        ref?.reset()
       }}
     >
       {children}
