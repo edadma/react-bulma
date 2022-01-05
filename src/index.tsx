@@ -1,70 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './bulma.min.css'
-import { Box, Columns, Column, Field, Label, Control, Input } from './index'
+import { Box, Columns, Column, Field, Label, Control, Input, Form, Submit } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 
 const App: React.FC = () => {
-  return (
-    <section className="hero is-primary is-fullheight">
-      <div className="hero-body">
-        <div className="container">
-          <div className="columns is-5-tablet is-4-desktop is-3-widescreen">
-            <div className="column">
-              <form className="box" onSubmit={(x) => console.log(x)}>
-                <div className="field has-text-centered">
-                  <img src="images/logo.png" width="167" />
-                </div>
-                <div className="field">
-                  <label className="label">Email</label>
-                  <div className="control has-icons-left">
-                    <input type="text" className="input" placeholder="e.g. hkakehas@cisco.com" />
-                    <span className="icon is-small is-left">
-                      <i className="fa fa-envelope"></i>
-                    </span>
-                  </div>
-                </div>
-                <div className="field">
-                  <label className="label">Password</label>
-                  <div className="control has-icons-left">
-                    <input type="password" className="input" placeholder="*********" required />
-                    <span className="icon is-small is-left">
-                      <i className="fa fa-lock"></i>
-                    </span>
-                  </div>
-                </div>
-                <div className="field">
-                  <label className="checkbox">
-                    <input type="checkbox" />
-                    Remember me
-                  </label>
-                </div>
-                <div className="field">
-                  <input type="submit" title="Login" className="button is-success" />
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-  /*  return (
+  const [input, setInput] = useState<any>({})
 
+  return (
     <Columns>
       <Column size="3">
         <Box>
-          <Field>
-            <Label>Input</Label>
-            <Control>
-              <Input onInputCapture={(x) => console.log(x)} type="text" placeholder="Text input" />
-            </Control>
-          </Field>
+          <Form onSubmit={setInput}>
+            <Field>
+              <Label>Input</Label>
+              <Control>
+                <Input name="input" type="text" placeholder="Text input" />
+              </Control>
+            </Field>
+            <Field>
+              <Control>
+                <Submit color="success" />
+              </Control>
+            </Field>
+          </Form>
         </Box>
       </Column>
-      <Column size="3">asdf</Column>
+      <Column size="3">
+        <Box>{JSON.stringify(input)}</Box>
+      </Column>
     </Columns>
-  )*/
+  )
 }
 
 ReactDOM.render(
@@ -94,7 +60,7 @@ export { Progress } from './Progress'
 export { Table } from './Table'
 export { Tag, Tags } from './Tag'
 export { Title, Subtitle } from './Title'
-export { Field, FieldLabel, Control, Label, Input } from './Form'
+export { Form, Field, FieldLabel, Control, Label, Input, Submit } from './Form'
 
 // const data = [
 //   {

@@ -83,3 +83,39 @@ export const Input: React.FC<InputProps> = ({ children, inputSize, color, ...oth
     </input>
   )
 }
+
+interface FormProps {
+  onSubmit: (data: any) => void
+}
+
+export const Form: React.FC<FormProps> = ({ children, onSubmit }) => {
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault()
+
+        const data = new FormData(e.target as HTMLFormElement)
+
+        onSubmit(Object.fromEntries(data.entries()))
+      }}
+    >
+      {children}
+    </form>
+  )
+}
+
+interface SubmitProps {
+  text?: string
+  size?: Size
+  color?: Color
+}
+
+export const Submit: React.FC<SubmitProps> = ({ children, text, size, color, ...other }) => {
+  return (
+    <input
+      className={classNames('button', { [`is-${size}`]: size }, { [`is-${color}`]: color })}
+      type="submit"
+      value={text || 'Submit'}
+    />
+  )
+}
