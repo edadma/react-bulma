@@ -15,14 +15,7 @@ const App: React.FC = () => {
             <Field>
               <Label>Input</Label>
               <Control>
-                <Input
-                  name="input"
-                  type="text"
-                  placeholder="Text input"
-                  rounded
-                  defaultValue="asdf"
-                  onChange={(e) => console.log(e.target.value)}
-                />
+                <Input name="input" type="text" placeholder="Text input" color="success" rounded />
               </Control>
             </Field>
             <Field>
