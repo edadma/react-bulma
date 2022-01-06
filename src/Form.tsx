@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import classNames from 'classnames'
 import { hasProps, isProps } from './utils'
 import { Color, Size } from './types'
@@ -89,18 +89,18 @@ interface FormProps {
 }
 
 export const Form: React.FC<FormProps> = ({ children, onSubmit }) => {
-  let ref: HTMLFormElement | null = null
+  const form = useRef<HTMLFormElement>(null)
 
   return (
     <form
-      ref={(f) => (ref = f)}
+      ref={form}
       onSubmit={(e) => {
         e.preventDefault()
 
         const data = new FormData(e.target as HTMLFormElement)
 
         onSubmit(Object.fromEntries(data.entries()))
-        ref?.reset()
+        form.current?.reset()
       }}
     >
       {children}
