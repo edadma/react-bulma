@@ -8,10 +8,10 @@ import {
   FieldLabel,
   FieldBody,
   Control,
-  Input,
   Form,
   Button,
   Buttons,
+  Textarea,
 } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
@@ -29,12 +29,11 @@ const App: React.FC = () => {
               <FieldBody>
                 <Field>
                   <Control>
-                    <Input
+                    <Textarea
+                      style={{ fontFamily: 'monospace' }}
                       name="input"
-                      type="text"
                       placeholder="Text input"
                       color="success"
-                      rounded
                       required
                     />
                   </Control>
@@ -95,9 +94,11 @@ export { Progress } from './Progress'
 export { Table } from './Table'
 export { Tag, Tags } from './Tag'
 export { Title, Subtitle } from './Title'
-export { Form, Field, FieldLabel, FieldBody, Control, Label, Input } from './Form'
+export { Form, Field, FieldLabel, FieldBody, Control, Label } from './Form'
 export { Message } from './Message'
 export { Breadcrumbs, Breadcrumb } from './Breadcrumb'
+export { Input } from './Input'
+export { Textarea } from './Textarea'
 
 // import { Box, Columns, Column, Field, Label, Control, Input, Form, Submit } from './index'
 // import ReactDOM from 'react-dom'

@@ -73,29 +73,6 @@ export const Label: React.FC<LabelProps> = ({ children, ...other }) => {
   )
 }
 
-interface InputProps
-  extends React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> {
-  inputSize?: Size
-  color?: Color
-  rounded?: boolean
-}
-
-export const Input: React.FC<InputProps> = ({ children, inputSize, color, ...other }) => {
-  return (
-    <input
-      className={classNames(
-        'input',
-        isProps(other, 'rounded'),
-        { [`is-${inputSize}`]: inputSize },
-        { [`is-${color}`]: color }
-      )}
-      {...other}
-    >
-      {children}
-    </input>
-  )
-}
-
 interface FormProps {
   onSubmit: (data: any) => void
 }
