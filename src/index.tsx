@@ -1,20 +1,68 @@
 import React, { useState } from 'react'
 import './bulma.min.css'
-import { Box, Columns, Column, Breadcrumbs, Breadcrumb } from './index'
+import {
+  Box,
+  Columns,
+  Column,
+  Field,
+  FieldLabel,
+  FieldBody,
+  Control,
+  Input,
+  Form,
+  Button,
+  Buttons,
+} from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 
 const App: React.FC = () => {
+  const [input, setInput] = useState<any>({})
+
   return (
     <Columns>
       <Column size="3">
         <Box>
-          <Breadcrumbs separator="succeeds" size="large" align="centered">
-            <Breadcrumb href="asdf">one</Breadcrumb>
-            <Breadcrumb>two</Breadcrumb>
-            <Breadcrumb active>three</Breadcrumb>
-          </Breadcrumbs>
+          <Form onSubmit={setInput}>
+            <Field horizontal>
+              <FieldLabel>Input</FieldLabel>
+              <FieldBody>
+                <Field>
+                  <Control>
+                    <Input
+                      name="input"
+                      type="text"
+                      placeholder="Text input"
+                      color="success"
+                      rounded
+                      required
+                    />
+                  </Control>
+                </Field>
+              </FieldBody>
+            </Field>
+            <Field horizontal grouped>
+              <FieldLabel />
+              <FieldBody>
+                <Field>
+                  <Control>
+                    <Buttons>
+                      <Button type="submit" rounded color="success">
+                        Submit
+                      </Button>
+                      <Button type="reset" rounded outlined color="success">
+                        Reset
+                      </Button>
+                    </Buttons>
+                  </Control>
+                </Field>
+              </FieldBody>
+            </Field>
+          </Form>
         </Box>
+      </Column>
+      <Column size="3">
+        <Box>{JSON.stringify(input)}</Box>
       </Column>
     </Columns>
   )
@@ -47,7 +95,7 @@ export { Progress } from './Progress'
 export { Table } from './Table'
 export { Tag, Tags } from './Tag'
 export { Title, Subtitle } from './Title'
-export { Form, Field, FieldLabel, Control, Label, Input, Submit } from './Form'
+export { Form, Field, FieldLabel, FieldBody, Control, Label, Input } from './Form'
 export { Message } from './Message'
 export { Breadcrumbs, Breadcrumb } from './Breadcrumb'
 

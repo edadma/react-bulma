@@ -6,11 +6,23 @@ import { Color, Size } from './types'
 interface FieldProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
   horizontal?: boolean
+  grouped?: boolean
 }
 
 export const Field: React.FC<FieldProps> = ({ children, ...other }) => {
   return (
-    <div className={classNames('field', isProps(other, 'horizontal'))} {...other}>
+    <div className={classNames('field', isProps(other, 'horizontal', 'grouped'))} {...other}>
+      {children}
+    </div>
+  )
+}
+
+interface FieldBodyProps
+  extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
+
+export const FieldBody: React.FC<FieldBodyProps> = ({ children, ...other }) => {
+  return (
+    <div className={classNames('field-body')} {...other}>
       {children}
     </div>
   )
@@ -24,7 +36,7 @@ interface FieldLabelProps
 export const FieldLabel: React.FC<FieldLabelProps> = ({ children, size, ...other }) => {
   return (
     <div className={classNames('field-label', { [`is-${size}`]: size })} {...other}>
-      {children}
+      <Label>{children}</Label>
     </div>
   )
 }
@@ -105,27 +117,5 @@ export const Form: React.FC<FormProps> = ({ children, onSubmit }) => {
     >
       {children}
     </form>
-  )
-}
-
-interface SubmitProps {
-  text?: string
-  size?: Size
-  color?: Color
-  rounded?: boolean
-}
-
-export const Submit: React.FC<SubmitProps> = ({ children, text, size, color, ...other }) => {
-  return (
-    <input
-      className={classNames(
-        'button',
-        isProps(other, 'rounded'),
-        { [`is-${size}`]: size },
-        { [`is-${color}`]: color }
-      )}
-      type="submit"
-      value={text || 'Submit'}
-    />
   )
 }
