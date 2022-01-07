@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './bulma.min.css'
-import { Box, Columns, Column, Message } from './index'
+import { Box, Columns, Column, Breadcrumbs, Breadcrumb } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 
@@ -9,7 +9,11 @@ const App: React.FC = () => {
     <Columns>
       <Column size="3">
         <Box>
-          <Message header="this is the header">this is a message</Message>
+          <Breadcrumbs separator="succeeds" size="large" align="centered">
+            <Breadcrumb href="asdf">one</Breadcrumb>
+            <Breadcrumb>two</Breadcrumb>
+            <Breadcrumb active>three</Breadcrumb>
+          </Breadcrumbs>
         </Box>
       </Column>
     </Columns>
@@ -45,6 +49,7 @@ export { Tag, Tags } from './Tag'
 export { Title, Subtitle } from './Title'
 export { Form, Field, FieldLabel, Control, Label, Input, Submit } from './Form'
 export { Message } from './Message'
+export { Breadcrumbs, Breadcrumb } from './Breadcrumb'
 
 // import { Box, Columns, Column, Field, Label, Control, Input, Form, Submit } from './index'
 // import ReactDOM from 'react-dom'
