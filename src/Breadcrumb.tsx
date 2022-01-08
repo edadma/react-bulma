@@ -1,11 +1,11 @@
 import React from 'react'
-import { Size } from './types'
+import { Size, Align } from './types'
 import classNames from 'classnames'
 
 interface BreadcrumbsProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> {
   size?: Size
-  align?: 'centered' | 'right'
+  align?: Align
   separator?: 'arrow' | 'bullet' | 'dot' | 'succeeds'
 }
 

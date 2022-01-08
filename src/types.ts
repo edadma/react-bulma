@@ -22,3 +22,5 @@ export interface Helpers {
 }
 
 export type Type = 'text' | 'password' | 'email' | 'tel'
+
+export type Align = 'centered' | 'right'

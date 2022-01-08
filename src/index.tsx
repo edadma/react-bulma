@@ -1,82 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './bulma.min.css'
-import {
-  Box,
-  Columns,
-  Column,
-  Field,
-  FieldLabel,
-  FieldBody,
-  Control,
-  Form,
-  Button,
-  Buttons,
-  Textarea,
-  Checkbox,
-} from './index'
+import { Box, Tabs } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 
-const App: React.FC = () => {
-  const [input, setInput] = useState<any>({})
-
-  return (
-    <Columns>
-      <Column size="3">
-        <Box>
-          <Form onSubmit={setInput}>
-            <Field horizontal>
-              <FieldLabel>Input</FieldLabel>
-              <FieldBody>
-                <Field>
-                  <Control>
-                    <Textarea
-                      style={{ fontFamily: 'monospace' }}
-                      name="input"
-                      placeholder="Text input"
-                      color="success"
-                      required
-                    />
-                  </Control>
-                </Field>
-              </FieldBody>
-            </Field>
-            <Field horizontal grouped>
-              <FieldLabel />
-              <FieldBody>
-                <Field>
-                  <Control>
-                    <Checkbox>checkbox</Checkbox>
-                  </Control>
-                </Field>
-              </FieldBody>
-            </Field>
-            <Field horizontal grouped>
-              <FieldLabel />
-              <FieldBody>
-                <Field>
-                  <Control>
-                    <Buttons>
-                      <Button type="submit" rounded color="success">
-                        Submit
-                      </Button>
-                      <Button type="reset" rounded outlined color="success">
-                        Reset
-                      </Button>
-                    </Buttons>
-                  </Control>
-                </Field>
-              </FieldBody>
-            </Field>
-          </Form>
-        </Box>
-      </Column>
-      <Column size="3">
-        <Box>{JSON.stringify(input)}</Box>
-      </Column>
-    </Columns>
-  )
-}
+const App: React.FC = () => (
+  <Tabs
+    panes={[
+      { tab: 'one', pane: <Box>one</Box> },
+      { tab: 'two', pane: <Box>two</Box> },
+    ]}
+  />
+)
 
 ReactDOM.render(
   <React.StrictMode>
@@ -111,6 +46,95 @@ export { Breadcrumbs, Breadcrumb } from './Breadcrumb'
 export { Input } from './Input'
 export { Textarea } from './Textarea'
 export { Checkbox } from './Checkbox'
+export { Tabs } from './Tabs'
+
+// import {
+//   Box,
+//   Columns,
+//   Column,
+//   Field,
+//   FieldLabel,
+//   FieldBody,
+//   Control,
+//   Form,
+//   Button,
+//   Buttons,
+//   Textarea,
+//   Checkbox,
+//   Tabs,
+//   Tab,
+// } from './index'
+// import ReactDOM from 'react-dom'
+// import reportWebVitals from './reportWebVitals'
+//
+// const App: React.FC = () => {
+//   const [input, setInput] = useState<any>({})
+//
+//   return (
+//     <>
+//       <Tabs
+//         panes={[
+//           { tab: 'one', pane: 'one' },
+//           { tab: 'two', pane: 'two' },
+//         ]}
+//       />
+//       <Columns>
+//         <Column size="3">
+//           <Box>
+//             <Form onSubmit={setInput}>
+//               <Field horizontal>
+//                 <FieldLabel>Input</FieldLabel>
+//                 <FieldBody>
+//                   <Field>
+//                     <Control>
+//                       <Textarea
+//                         style={{ fontFamily: 'monospace' }}
+//                         name="input"
+//                         placeholder="Text input"
+//                         color="success"
+//                         required
+//                       />
+//                     </Control>
+//                   </Field>
+//                 </FieldBody>
+//               </Field>
+//               <Field horizontal grouped>
+//                 <FieldLabel />
+//                 <FieldBody>
+//                   <Field>
+//                     <Control>
+//                       <Checkbox>checkbox</Checkbox>
+//                     </Control>
+//                   </Field>
+//                 </FieldBody>
+//               </Field>
+//               <Field horizontal grouped>
+//                 <FieldLabel />
+//                 <FieldBody>
+//                   <Field>
+//                     <Control>
+//                       <Buttons>
+//                         <Button type="submit" rounded color="success">
+//                           Submit
+//                         </Button>
+//                         <Button type="reset" rounded outlined color="success">
+//                           Reset
+//                         </Button>
+//                       </Buttons>
+//                     </Control>
+//                   </Field>
+//                 </FieldBody>
+//               </Field>
+//             </Form>
+//           </Box>
+//         </Column>
+//         <Column size="3">
+//           <Box>{JSON.stringify(input)}</Box>
+//         </Column>
+//       </Columns>
+//     </>
+//   )
+// }
 
 // import { Box, Columns, Column, Field, Label, Control, Input, Form, Submit } from './index'
 // import ReactDOM from 'react-dom'
