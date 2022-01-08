@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import classNames from 'classnames'
 import { hasProps, isProps } from './utils'
-import { Color, Size } from './types'
+import { Size } from './types'
 
 interface FieldProps
   extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {

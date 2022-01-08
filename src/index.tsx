@@ -12,6 +12,7 @@ import {
   Button,
   Buttons,
   Textarea,
+  Checkbox,
 } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
@@ -36,6 +37,16 @@ const App: React.FC = () => {
                       color="success"
                       required
                     />
+                  </Control>
+                </Field>
+              </FieldBody>
+            </Field>
+            <Field horizontal grouped>
+              <FieldLabel />
+              <FieldBody>
+                <Field>
+                  <Control>
+                    <Checkbox>checkbox</Checkbox>
                   </Control>
                 </Field>
               </FieldBody>
@@ -99,6 +110,7 @@ export { Message } from './Message'
 export { Breadcrumbs, Breadcrumb } from './Breadcrumb'
 export { Input } from './Input'
 export { Textarea } from './Textarea'
+export { Checkbox } from './Checkbox'
 
 // import { Box, Columns, Column, Field, Label, Control, Input, Form, Submit } from './index'
 // import ReactDOM from 'react-dom'

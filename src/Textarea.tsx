@@ -1,7 +1,6 @@
 import React, { KeyboardEventHandler, useRef } from 'react'
 import { Color, Size } from './types'
 import classNames from 'classnames'
-import { isProps } from './utils'
 
 interface TextareaProps
   extends React.DetailedHTMLProps<
