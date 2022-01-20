@@ -1,7 +1,7 @@
 {
   "name": "@edadma/react-bulma",
-  "version": "0.1.0-pre.32",
-  "description": "react components based on Bulma CSS",
+  "version": "0.1.0-pre.33",
+  "description": "React.js components library based on Bulma CSS",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"

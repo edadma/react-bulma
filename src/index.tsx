@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './bulma.min.css'
-import { Box, Columns, Column, Field, Label, Control, Input, Form, Submit } from './index'
+import { Box, Columns, Column, Form, Field, Label, Control, Input, Button } from './index'
 import ReactDOM from 'react-dom'
 import reportWebVitals from './reportWebVitals'
 
@@ -20,7 +20,9 @@ const App: React.FC = () => {
             </Field>
             <Field>
               <Control>
-                <Submit color="success" />
+                <Button type="submit" color="success">
+                  Submit
+                </Button>
               </Control>
             </Field>
           </Form>
@@ -60,7 +62,134 @@ export { Progress } from './Progress'
 export { Table } from './Table'
 export { Tag, Tags } from './Tag'
 export { Title, Subtitle } from './Title'
-export { Form, Field, FieldLabel, Control, Label, Input, Submit } from './Form'
+export { Form, Field, FieldLabel, FieldBody, Control, Label } from './Form'
+export { Message } from './Message'
+export { Breadcrumbs, Breadcrumb } from './Breadcrumb'
+export { Input } from './Input'
+export { Textarea } from './Textarea'
+export { Checkbox } from './Checkbox'
+export { Tabs } from './Tabs'
+
+// import {
+//   Box,
+//   Columns,
+//   Column,
+//   Field,
+//   FieldLabel,
+//   FieldBody,
+//   Control,
+//   Form,
+//   Button,
+//   Buttons,
+//   Textarea,
+//   Checkbox,
+//   Tabs,
+//   Tab,
+// } from './index'
+// import ReactDOM from 'react-dom'
+// import reportWebVitals from './reportWebVitals'
+//
+// const App: React.FC = () => {
+//   const [input, setInput] = useState<any>({})
+//
+//   return (
+//     <>
+//       <Tabs
+//         panes={[
+//           { tab: 'one', pane: 'one' },
+//           { tab: 'two', pane: 'two' },
+//         ]}
+//       />
+//       <Columns>
+//         <Column size="3">
+//           <Box>
+//             <Form onSubmit={setInput}>
+//               <Field horizontal>
+//                 <FieldLabel>Input</FieldLabel>
+//                 <FieldBody>
+//                   <Field>
+//                     <Control>
+//                       <Textarea
+//                         style={{ fontFamily: 'monospace' }}
+//                         name="input"
+//                         placeholder="Text input"
+//                         color="success"
+//                         required
+//                       />
+//                     </Control>
+//                   </Field>
+//                 </FieldBody>
+//               </Field>
+//               <Field horizontal grouped>
+//                 <FieldLabel />
+//                 <FieldBody>
+//                   <Field>
+//                     <Control>
+//                       <Checkbox>checkbox</Checkbox>
+//                     </Control>
+//                   </Field>
+//                 </FieldBody>
+//               </Field>
+//               <Field horizontal grouped>
+//                 <FieldLabel />
+//                 <FieldBody>
+//                   <Field>
+//                     <Control>
+//                       <Buttons>
+//                         <Button type="submit" rounded color="success">
+//                           Submit
+//                         </Button>
+//                         <Button type="reset" rounded outlined color="success">
+//                           Reset
+//                         </Button>
+//                       </Buttons>
+//                     </Control>
+//                   </Field>
+//                 </FieldBody>
+//               </Field>
+//             </Form>
+//           </Box>
+//         </Column>
+//         <Column size="3">
+//           <Box>{JSON.stringify(input)}</Box>
+//         </Column>
+//       </Columns>
+//     </>
+//   )
+// }
+
+// import { Box, Columns, Column, Field, Label, Control, Input, Form, Submit } from './index'
+// import ReactDOM from 'react-dom'
+// import reportWebVitals from './reportWebVitals'
+//
+// const App: React.FC = () => {
+//   const [input, setInput] = useState<any>({})
+//
+//   return (
+//     <Columns>
+//       <Column size="3">
+//         <Box>
+//           <Form onSubmit={setInput}>
+//             <Field>
+//               <Label>Input</Label>
+//               <Control>
+//                 <Input name="input" type="text" placeholder="Text input" color="success" rounded />
+//               </Control>
+//             </Field>
+//             <Field>
+//               <Control>
+//                 <Submit rounded color="success" />
+//               </Control>
+//             </Field>
+//           </Form>
+//         </Box>
+//       </Column>
+//       <Column size="3">
+//         <Box>{JSON.stringify(input)}</Box>
+//       </Column>
+//     </Columns>
+//   )
+// }
 
 // const data = [
 //   {
